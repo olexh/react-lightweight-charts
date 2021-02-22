@@ -119,9 +119,10 @@ class ChartWrapper extends React.Component {
 
     resizeHandler = () => {
         let width =
-            this.props.autoWidth &&
             this.chartDiv.current &&
-            this.chartDiv.current.parentNode.clientWidth;
+            (this.props.autoWidth ?
+            this.chartDiv.current.parentNode.clientWidth : 
+            this.props.width);
         let height =
             this.props.autoHeight && this.chartDiv.current
                 ? this.chartDiv.current.parentNode.clientHeight
